@@ -1,0 +1,7 @@
+name: MMOCasting
+version: '${version}'
+main: cn.encmys.ykdz.forest.mmocasting.MMOCastingImpl
+api-version: '1.14'
+depend: [MythicLib]
+softdepend: [MMOItems]
+authors: [YKDZ]
