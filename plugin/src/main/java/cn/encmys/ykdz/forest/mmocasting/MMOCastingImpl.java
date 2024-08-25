@@ -1,8 +1,10 @@
 package cn.encmys.ykdz.forest.mmocasting;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import cn.encmys.ykdz.forest.mmocasting.hook.MythicLibHook;
+import cn.encmys.ykdz.forest.mmocasting.profile.factory.ProfileFactory;
+import cn.encmys.ykdz.forest.mmocasting.profile.factory.ProfileFactoryImpl;
 
-public final class MMOCastingImpl extends MMOCasting {
+public class MMOCastingImpl extends MMOCasting {
 
     @Override
     public void onLoad() {
@@ -11,12 +13,23 @@ public final class MMOCastingImpl extends MMOCasting {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        load();
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+
+    }
+
+    @Override
+    public void reload() {
+
+    }
+
+    @Override
+    public void load() {
+        MythicLibHook.load();
+
+        PROFILE_FACTORY = new ProfileFactoryImpl();
     }
 }
